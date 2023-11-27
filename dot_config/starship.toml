@@ -1,0 +1,55 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Inserts a blank line between shell prompts
+add_newline = true
+
+# Move some modules to the right
+# right_format = """
+# $battery\
+# $time\
+# $username\
+# $localip\
+# """
+# format = """$all"""
+
+# Replace the "❯" symbol in the prompt with "➜"
+[character] # The name of the module we are configuring is "character"
+
+[[battery.display]]
+threshold = 10
+style = "bold red"
+
+[[battery.display]]
+threshold = 30
+style = "bold yellow"
+
+[[battery.display]]
+threshold = 100
+style = "bold green"
+
+[status]
+disabled = false
+format = "[$symbol $status]($style) "
+
+[sudo]
+allow_windows = true
+disabled = false
+
+[time]
+disabled = false
+
+[kubernetes]
+disabled = false
+
+[shell]
+bash_indicator = "bash"
+powershell_indicator = "pwsh"
+unknown_indicator = "unknown shell"
+style = "cyan bold"
+disabled = false
+
+[shlvl]
+disabled = false
+symbol = "SHLVL "
+#symbol = "↕️ "
