@@ -39,7 +39,7 @@ $programFiles = [Environment]::GetFolderPath([Environment+SpecialFolder]::Progra
 $vimPath = Convert-Path $programFiles/Vim/vim90
 Add-PathItem $vimPath
 Set-Alias vi vim
-if (Get-Command -EA SilentlyContinue nvim)) {
+if (Get-Command -EA SilentlyContinue nvim) {
     Set-Alias vim nvim
 }
 
